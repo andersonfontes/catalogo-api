@@ -8,6 +8,9 @@
     "start":"node src/server.js",
     "postinstall": "npm rebuild sqlite3"
   },
+  "engine":{
+    "node" : "20.x"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andersonfontes/catalogo-api.git"
@@ -28,5 +31,6 @@
   "devDependencies": {
     "nodemon": "^3.1.14"
   }
+  
   
 }
