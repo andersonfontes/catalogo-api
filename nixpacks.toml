@@ -1,0 +1,3 @@
+# nixpacks.toml
+[phases.setup]
+aptPkgs = ["python3", "make", "g++", "sqlite3", "libsqlite3-dev"]
