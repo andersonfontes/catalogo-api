@@ -11,9 +11,16 @@ const app = express()
 
 app.use(express.json())
 
-// CORS liberado para uso educacional
+// CORS para o front (GitHub Pages -> Railway)
 app.use(cors())
-app.options("/*", cors())
+
+// Preflight (OPTIONS) sem usar app.options("*") ou app.options("/*") (isso crasha no Express 5)
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    return res.sendStatus(204)
+  }
+  next()
+})
 
 app.get("/", (req, res) => {
   res.json({ status: "ok", name: "Catalogo API" })
