@@ -11,9 +11,9 @@ const app = express()
 
 app.use(express.json())
 
-// libera chamadas do navegador (GitHub Pages -> Railway)
+// CORS liberado para uso educacional
 app.use(cors())
-app.options("*", cors())
+app.options("/*", cors())
 
 app.get("/", (req, res) => {
   res.json({ status: "ok", name: "Catalogo API" })
