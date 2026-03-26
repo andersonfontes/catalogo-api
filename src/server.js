@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 require("dotenv").config()
 
 const { initDb } = require("./db")
@@ -9,6 +10,10 @@ const productsRoutes = require("./routes/products.routes")
 const app = express()
 
 app.use(express.json())
+
+// libera chamadas do navegador (GitHub Pages -> Railway)
+app.use(cors())
+app.options("*", cors())
 
 app.get("/", (req, res) => {
   res.json({ status: "ok", name: "Catalogo API" })

@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon src/server.js",
-    "start":"node src/server.js",
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
     "postinstall": "npm rebuild sqlite3"
   },
-  "engine":{
-    "node" : "20.x"
+  "engine": {
+    "node": "20.x"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/andersonfontes/catalogo-api#readme",
   "dependencies": {
+    "cors": "^2.8.6",
     "dotenv": "^17.3.1",
     "express": "^5.2.1",
     "sqlite3": "5.1.7"
@@ -31,6 +32,4 @@
   "devDependencies": {
     "nodemon": "^3.1.14"
   }
-  
-  
 }
